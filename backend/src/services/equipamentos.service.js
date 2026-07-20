@@ -16,7 +16,7 @@ class EquipamentosService {
 
   async create(data) {
     try {
-      const res = await pool.query("INSERT INTO public.equipamentos (nome, email, cargo) values ($1, $2, $3, $4) returning *", [data.nome, data.preco , data.estoque, data.descricao]);
+      const res = await pool.query("INSERT INTO public.equipamentos (nome, preco, estoque, descricao) values ($1, $2, $3, $4) returning *", [data.nome, data.preco , data.estoque, data.descricao]);
       return(res.rows)
     } catch (error) {
       console.error(error)

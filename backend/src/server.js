@@ -7,6 +7,7 @@ import { funcDepRouter } from './routes/departamento_funcionario.route.js'
 import { equipamentoRouter } from './routes/equipamento.route.js'
 import { categoriaRouter } from './routes/categoria.route.js'
 import { equipCategRouter } from './routes/categoria_equipamento.route.js'
+import { distribuicaoRouter } from './routes/distribuicao.route.js'
 const app = express()
 
 const port = process.env.API_PORT
@@ -23,6 +24,7 @@ app.use('/funcionarios_departamentos', funcDepRouter)
 app.use('/equipamentos', equipamentoRouter)
 app.use('/categorias', categoriaRouter)
 app.use('/equipamentos_categorias', equipCategRouter)
+app.use('/distribuicoes', distribuicaoRouter)
 
 
 app.listen(port, () => {
